@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * print_char - print character
@@ -8,12 +9,14 @@
  * Return: void
  */
 
-void print_char(va_list args)
+int print_char(va_list args)
 {
 	char c;
 
 	c = va_arg(args, int);
 	putchar(c);
+
+	return (1);
 }
 
 /**
@@ -22,7 +25,7 @@ void print_char(va_list args)
  *
  * Return: void
  */
-void print_string(va_list args)
+int print_string(va_list args)
 {
 	int i;
 	char *s;
@@ -38,4 +41,5 @@ void print_string(va_list args)
 		i++;
 	}
 
+	return (i);
 }
