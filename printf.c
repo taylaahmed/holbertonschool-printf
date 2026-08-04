@@ -37,7 +37,6 @@ int _printf(const char *format, ...)
 				/* if character after % = types in array */
 				if (format[i + 1] == types[j].type[0])
 				{
-					types[j].f(args);
 					/* skip next char after % */
 					i++;
 					count += types[j].f(args);
