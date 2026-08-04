@@ -6,24 +6,25 @@
  * print_char - print character
  * @args: argument input
  *
- * Return: void
+ * Return: 0
  */
 
-void print_char(va_list args)
+int print_char(va_list args)
 {
 	char c;
 
 	c = va_arg(args, int);
 	putchar(c);
+	return (0);
 }
 
 /**
  * print_string - print string
  * @args: argument input
  *
- * Return: void
+ * Return: i - 1
  */
-void print_string(va_list args)
+int print_string(va_list args)
 {
 	int i;
 	char *s;
@@ -38,4 +39,5 @@ void print_string(va_list args)
 		putchar(s[i]);
 		i++;
 	}
+	return (i - 1);
 }

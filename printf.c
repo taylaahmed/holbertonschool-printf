@@ -40,6 +40,7 @@ int _printf(const char *format, ...)
 					types[j].f(args);
 					/* skip next char after % */
 					i++;
+					count += types[j].f(args);
 					break;
 				}
 			j++;

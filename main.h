@@ -8,11 +8,11 @@ int _putchar(char c);
 typedef struct print
 {
 	char *type;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } print_t;
 
-void print_char(va_list args);
-void print_string(va_list args);
+int print_char(va_list args);
+int print_string(va_list args);
 int _printf(const char *format, ...);
 
 #endif

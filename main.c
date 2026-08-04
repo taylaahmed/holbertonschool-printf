@@ -13,6 +13,7 @@ int main(void)
     _printf("String:[%s]\n", "I am a string !");
     _printf("Let's print a simple sentence.\n");
     _printf("%c", 'S');
+    _printf("%s", "This sentence is retrieved from va_args!\n");
 
     return (0);
 }
