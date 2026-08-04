@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	unsigned int i;
 	unsigned int j;
+	unsigned int count;
 
 	print_t types[] = {
 		{"c", print_char},
@@ -22,6 +23,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	i = 0;
+	count = 0;
 	/* loops through characters from input */
 	while (format != NULL && format[i] != '\0')
 	{
@@ -48,11 +50,8 @@ int _printf(const char *format, ...)
 			putchar(format[i]);
 		}
 		i++;
+		count++;
 	}
 	va_end(args);
-	if (format[i] != '\n')
-	{
-		i -= 1;
-	}
-	return (i);
+	return (count);
 }
