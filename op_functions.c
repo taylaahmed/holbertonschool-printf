@@ -9,14 +9,12 @@
  * Return: void
  */
 
-int print_char(va_list args)
+void print_char(va_list args)
 {
 	char c;
 
 	c = va_arg(args, int);
 	putchar(c);
-
-	return (1);
 }
 
 /**
@@ -25,7 +23,7 @@ int print_char(va_list args)
  *
  * Return: void
  */
-int print_string(va_list args)
+void print_string(va_list args)
 {
 	int i;
 	char *s;
@@ -40,6 +38,4 @@ int print_string(va_list args)
 		putchar(s[i]);
 		i++;
 	}
-
-	return (i);
 }

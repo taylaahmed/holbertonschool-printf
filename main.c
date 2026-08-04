@@ -11,5 +11,8 @@ int main(void)
 {
     _printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
+    _printf("Let's print a simple sentence.\n");
+    _printf("%c", 'S');
+
     return (0);
 }

@@ -50,5 +50,9 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
+	if (format[i] != '\n')
+	{
+		i -= 1;
+	}
 	return (i);
 }
