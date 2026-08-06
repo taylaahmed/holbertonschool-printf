@@ -9,11 +9,11 @@
  */
 int main(void)
 {
-    _printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
-    _printf("Let's print a simple sentence.\n");
-    _printf("%c", 'S');
-    _printf("%s", "This sentence is retrieved from va_args!\n");
-
-    return (0);
+	_printf("Character:[%c]\n", 'H');
+	_printf("String:[%s]\n", "I am a string !");
+	_printf("Let's print a simple sentence.\n");
+	_printf("%c", 'S');
+	_printf("%s", "This sentence is retrieved from va_args!\n");
+	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	return (0);
 }
