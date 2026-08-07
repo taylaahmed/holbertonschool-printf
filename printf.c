@@ -35,6 +35,11 @@ int _printf(const char *format, ...)
 		/* checks for input % */
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+			{
+				return (0);
+			}
+
 			if (format[i + 1] == '%')
 			{
 				putchar('%');
