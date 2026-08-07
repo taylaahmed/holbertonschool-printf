@@ -19,5 +19,6 @@ int main(void)
 	_printf("%!\n");
 	_printf(NULL);
 	_printf("Should print a single percent sign: %%\n");
+	printf("return = %d\n", _printf("%%"));
 	return (0);
 }
