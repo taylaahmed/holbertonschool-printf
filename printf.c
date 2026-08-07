@@ -18,7 +18,8 @@ int _printf(const char *format, ...)
 
 	print_t types[] = {
 		{"c", print_char},
-		{"s", print_string}
+		{"s", print_string},
+		{NULL, NULL}
 	};
 
 	va_start(args, format);
@@ -28,9 +29,11 @@ int _printf(const char *format, ...)
 	while (format != NULL && format[i] != '\0')
 	{
 		/* checks for input % */
-		if (format[i] == '%')
+		if (format[i] == '%' && (format[i + 1] == 's' || format[i + 1] == 'c'))
 		{
+
 			j = 0;
+
 			/* loops through array */
 			while (types[j].type != NULL)
 			{

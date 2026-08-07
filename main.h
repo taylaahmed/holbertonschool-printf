@@ -5,6 +5,12 @@
 
 int _putchar(char c);
 
+/**
+ * struct print - struct
+ * @type: the char (c) or (s)
+ * @f: function to go to
+ */
+
 typedef struct print
 {
 	char *type;
