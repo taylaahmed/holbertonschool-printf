@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0' || format[i + 1] == '\n')
 			{
 				i++;
-				count --;
+				return (-1);
 			}
 			else if (format[i + 1] == 's' || format[i + 1] == 'c')
 			{
