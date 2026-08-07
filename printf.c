@@ -72,7 +72,7 @@ int _printf(const char *format, ...)
 		i++;
 		count++;
 	}
-	printf("%d", count);
+
 	va_end(args);
 	return (count);
 }
