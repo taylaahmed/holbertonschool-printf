@@ -15,8 +15,7 @@ int main(void)
 	_printf("%c", 'S');
 	_printf("%s", "This sentence is retrieved from va_args!\n");
 	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-	_printf("%%");
-	_printf("%");
+	_printf("%%\n");
 	_printf("%!\n");
 	_printf(NULL);
 	_printf("Should print a single percent sign: %%\n");

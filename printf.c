@@ -35,14 +35,12 @@ int _printf(const char *format, ...)
 		/* checks for input % */
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-				return (-1);
+			if (format[i + 1] == '\0' || format[i + 1] == '\n')
+			{
+				i++;
+			}
 
-			i++;
-
-			if (format[i] == '%')
-				putchar('%');
-			if (format[i] == 's' || format[i] == 'c')
+			if (format[i + 1] == 's' || format[i + 1] == 'c')
 			{
 
 				j = 0;
@@ -51,14 +49,19 @@ int _printf(const char *format, ...)
 				while (types[j].type != NULL)
 				{
 					/* if character after % = types in array */
-					if (format[i] == types[j].type[0])
+					if (format[i + 1] == types[j].type[0])
 					{
 						/* skip next char after % */
 						count += types[j].f(args);
+						i++;
 						break;
 					}
 				j++;
 				}
+			}
+			else
+			{
+				putchar(format[i]);
 			}
 		}
 		else
