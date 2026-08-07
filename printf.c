@@ -51,6 +51,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			putchar(format[i]);
+		if (format[i + 1] == '%')
+			i++;
 		}
 		i++;
 		count++;
