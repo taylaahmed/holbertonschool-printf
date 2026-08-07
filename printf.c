@@ -25,6 +25,10 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	count = 0;
+
+	if (format == NULL)
+		return (-1);
+
 	/* loops through characters from input */
 	while (format != NULL && format[i] != '\0')
 	{
