@@ -38,9 +38,9 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0' || format[i + 1] == '\n')
 			{
 				i++;
+				count --;
 			}
-
-			if (format[i + 1] == 's' || format[i + 1] == 'c')
+			else if (format[i + 1] == 's' || format[i + 1] == 'c')
 			{
 
 				j = 0;
@@ -72,6 +72,7 @@ int _printf(const char *format, ...)
 		i++;
 		count++;
 	}
+	printf("%d", count);
 	va_end(args);
 	return (count);
 }
