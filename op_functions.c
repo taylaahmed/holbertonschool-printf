@@ -108,7 +108,7 @@ int print_dec(va_list args)
 	
 	print_numbers(i);
 
-	return (count);
+	return (count - 1);
 
 }
 

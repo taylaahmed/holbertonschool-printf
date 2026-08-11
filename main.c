@@ -27,6 +27,7 @@ int main(void)
 	printf("return = %d\n", _printf("%%"));
 	_printf("Length:[%d, %i]\n", len, len);	
 	_printf("%d\n", -1024);
+	_printf("%d", 1024);
 	_printf("%d", 0);
 	
 	return (0);
