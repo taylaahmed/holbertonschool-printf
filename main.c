@@ -28,7 +28,8 @@ int main(void)
 	_printf("Length:[%d, %i]\n", len, len);	
 	_printf("%d\n", -1024);
 	_printf("%d", 1024);
-	_printf("%d", 0);
+	_printf("%d\n", 0);
+	_printf("%d", INT_MIN);
 	
 	return (0);
 }
