@@ -51,11 +51,19 @@ int print_string(va_list args)
 	return (i - 1);
 }
 
-int print_dec(va_list args)
+/**
+ * print_int_dec - printing numbers
+ * @args: argument input
+ *
+ * Return: number of numbers printed
+ */
+
+
+int print_int_dec(va_list args)
 {
 	int count;
 	long int i;
-	long int n;
+	long int n; /* to use for Min case */
 
 	count = 0;
 
@@ -78,15 +86,24 @@ int print_dec(va_list args)
 
 	while (n > 0)
 	{
+		/* counter for return value */
 		n = n / 10;
 		count++;
 	}
 	
 	print_numbers(i);
 
+	/* bc it is still counting the */
 	return (count - 1);
 
 }
+
+/**
+ * print_numbers - recurssion to print numbers
+ * @i: input value
+ *
+ * Return: void
+ */
 
 void print_numbers(long int i)
 {

@@ -19,8 +19,8 @@ int _printf(const char *format, ...)
 	print_t types[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"i", print_dec},
-		{"d", print_dec},
+		{"i", print_int_dec},
+		{"d", print_int_dec},
 		{NULL, NULL}
 	};
 
