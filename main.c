@@ -9,6 +9,9 @@
  */
 int main(void)
 {
+	int len;
+
+	len = _printf("Let's try to printf a simple sentence.\n");
 	_printf("Character:[%c]\n", 'H');
 	_printf("%");
 	_printf("String:[%s]\n", "I am a string !%");
@@ -20,6 +23,9 @@ int main(void)
 	_printf("%!\n");
 	_printf(NULL);
 	_printf("Should print a single percent sign: %%\n");
+	_printf("int: [%i]\n", 12);
 	printf("return = %d\n", _printf("%%"));
+	_printf("Length:[%d, %i]\n", len, len);	
+	
 	return (0);
 }

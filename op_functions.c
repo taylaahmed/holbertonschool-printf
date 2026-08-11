@@ -47,3 +47,51 @@ int print_string(va_list args)
 	}
 	return (i - 1);
 }
+
+int print_int(va_list args)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	i = va_arg(args, int);
+
+	/* bc putchar can only print 1 digit */
+
+	if (i >= 10)
+	{
+		count++;
+		putchar(i / 10 + '0');
+
+	}
+	putchar(i % 10 + '0');
+	count++;
+
+	return (count);
+
+}
+
+int print_double(va_list args)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	i = va_arg(args, int);
+
+	/* bc putchar can only print 1 digit */
+
+	if (i >= 10)
+	{
+		count++;
+		putchar(i / 10 + '0');
+
+	}
+	putchar(i % 10 + '0');
+	count++;
+
+	return (count);
+
+}	

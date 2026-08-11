@@ -19,6 +19,8 @@ int _printf(const char *format, ...)
 	print_t types[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"i", print_int},
+		{"d", print_double},
 		{NULL, NULL}
 	};
 
@@ -45,7 +47,7 @@ int _printf(const char *format, ...)
 				putchar('%');
 				i++;
 			}
-			else if (format[i + 1] == 's' || format[i + 1] == 'c')
+			else if (format[i + 1] == 's' || format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'd')
 			{
 
 				j = 0;
