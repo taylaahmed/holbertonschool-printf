@@ -26,10 +26,10 @@ int main(void)
 	_printf("int: [%i]\n", 12);
 	printf("return = %d\n", _printf("%%"));
 	_printf("Length:[%d, %i]\n", len, len);	
-	_printf("%d\n", -1024);
-	_printf("%d", 1024);
-	_printf("%d\n", 0);
-	_printf("%d", INT_MIN);
+	_printf("%i\n", -1024);
+	_printf("%i", 1024);
+	_printf("%i\n", 0);
+	_printf("%i\n", INT_MIN);
 	
 	return (0);
 }
