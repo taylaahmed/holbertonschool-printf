@@ -24,6 +24,9 @@ int print_char(va_list args)
  *
  * Return: i - 1
  */
+
+int print_numbers();
+
 int print_string(va_list args)
 {
 	int i;
@@ -72,26 +75,39 @@ int print_int(va_list args)
 
 }
 
-int print_double(va_list args)
+int print_dec(va_list args)
 {
-	int i;
+	int count;
+	int i = va_arg(args, int);
+
+	count = print_numbers(i);
+	return (count);
+
+}
+
+int print_numbers(int i)
+{
+
 	int count;
 
 	count = 0;
 
-	i = va_arg(args, int);
-
-	/* bc putchar can only print 1 digit */
-
-	if (i >= 10)
+	if (i < 0)
 	{
-		count++;
-		putchar(i / 10 + '0');
-
+		putchar('-');
+		i = -i;
+		/* making it positive for printing */
 	}
+
+	if (i == 0)
+		putchar('0');
+	
+	if (i / 10)
+		print_numbers(i / 10);
+
 	putchar(i % 10 + '0');
 	count++;
 
 	return (count);
 
-}	
+}
