@@ -54,19 +54,27 @@ int _printf(const char *format, ...)
 	i = 0, count = 0, print_func = 0;
 
 	if (format == NULL)
+	{
+		va_end(args);
 		return (-1);
+	}
 
 	while (format != NULL && format[i] != '\0')
 	{
+
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
+			{
+				va_end(args);
 				return (-1);
+			}
 			if (format[i + 1] == '%')
 			{
 				putchar('%');
-				count++;
 				i++;
+				count++;
+				continue;
 			}
 			else
 			{
@@ -74,22 +82,23 @@ int _printf(const char *format, ...)
 				if (print_func != -1) /* if one of funcs */
 				{
 					count += print_func;
-					i++;
+					i += 2;
+					continue;
 				}
 				else
 				{
 					putchar(format[i]);
-					count++;
+					i++;
+					continue;
 				}
 			}
 		}
-		else
-		{
-			putchar(format[i]);
-			count++;
-		}
+
+		putchar(format[i]);
+		count++;
 		i++;
 	}
+	printf("%d\n", count);
 	va_end(args);
 	return (count);
 }

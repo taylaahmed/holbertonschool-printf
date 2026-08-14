@@ -13,8 +13,14 @@ int main(void)
 	_printf("%");
 	_printf("String:[%s]\n", "I am a string !%");
 	_printf("Let's print a simple sentence%.\n");
-	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
 	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-	
+	_printf("%");
+	_printf("%s%c\n", "hey", 's');	
+	_printf("%c", 'S');
+	_printf("%%");
+	_printf("%!\n");
+	_printf("%i", INT_MAX);
+	_printf("%i", INT_MIN);
+
 	return (0);
 }
