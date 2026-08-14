@@ -65,16 +65,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{
-				va_end(args);
 				return (-1);
-			}
 			if (format[i + 1] == '%')
 			{
 				putchar('%');
 				i++;
 				count++;
-				continue;
 			}
 			else
 			{
@@ -82,20 +78,20 @@ int _printf(const char *format, ...)
 				if (print_func != -1) /* if one of funcs */
 				{
 					count += print_func;
-					i += 2;
-					continue;
+					i ++;
 				}
 				else
 				{
 					putchar(format[i]);
-					i++;
-					continue;
+					count++;
 				}
 			}
 		}
-
-		putchar(format[i]);
-		count++;
+		else
+		{
+			putchar(format[i]);
+			count++;
+		}
 		i++;
 	}
 
