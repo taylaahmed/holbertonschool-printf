@@ -37,7 +37,7 @@ int print_string(va_list args)
 	if (s == NULL)
 	{
 		printf("(null)");
-		return (5);
+		return (6);
 	}
 
 	i = 0;
