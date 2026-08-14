@@ -9,12 +9,9 @@
  * Return: 0
  */
 
-int _printf(const char *format, ...)
+int get_function(char s, va_list args)
 {
-	va_list args;
-	unsigned int i;
 	unsigned int j;
-	unsigned int count;
 
 	print_t types[] = {
 		{"c", print_char},
@@ -24,62 +21,75 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
+	j = 0;
+
+	while (types[j].type != NULL)
+	{
+		/* if character after % = types in array */
+		if (s == types[j].type[0])
+		{
+			return (types[j].f(args));
+		}
+		j++;
+	}
+
+	/* if none of them, return -1 */
+	return (-1);
+}
+
+/**
+ * _printf - printing respective functions
+ * @format: input letter
+ *
+ * Return: 0
+ */
+
+int _printf(const char *format, ...)
+{
+	va_list args;
+	unsigned int i, count;
+	int print_func;
+
 	va_start(args, format);
-	i = 0;
-	count = 0;
+	i = 0, count = 0, print_func = 0;
 
 	if (format == NULL)
 		return (-1);
 
-	/* loops through characters from input */
 	while (format != NULL && format[i] != '\0')
 	{
-		/* checks for input % */
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{
 				return (-1);
-			}
-
 			if (format[i + 1] == '%')
 			{
 				putchar('%');
+				count++;
 				i++;
-			}
-			else if (format[i + 1] == 's' || format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'd')
-			{
-
-				j = 0;
-
-				/* loops through array */
-				while (types[j].type != NULL)
-				{
-					/* if character after % = types in array */
-					if (format[i + 1] == types[j].type[0])
-					{
-						/* skip next char after % */
-						count += types[j].f(args);
-						i++;
-						break;
-					}
-				j++;
-				}
 			}
 			else
 			{
-				putchar(format[i]);
+				print_func = get_function(format[i + 1], args);
+				if (print_func != -1) /* if one of funcs */
+				{
+					count += print_func;
+					i++;
+				}
+				else
+				{
+					putchar(format[i]);
+					count++;
+				}
 			}
 		}
 		else
 		{
 			putchar(format[i]);
+			count++;
 		}
-
 		i++;
-		count++;
 	}
-
 	va_end(args);
 	return (count);
 }

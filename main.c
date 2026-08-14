@@ -16,8 +16,7 @@ int main(void)
 	_printf("%");
 	_printf("String:[%s]\n", "I am a string !%");
 	_printf("Let's print a simple sentence%.\n");
-	_printf("%c", 'S');
-	_printf("%s", "This sentence is retrieved from va_args!\n");
+	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
 	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	_printf("%%\n");
 	_printf("%!\n");
@@ -28,7 +27,6 @@ int main(void)
 	_printf("Length:[%d, %i]\n", len, len);	
 	_printf("%i\n", -1024);
 	_printf("%i", 1024);
-	_printf("%i\n", 0);
 	_printf("%i\n", INT_MIN);
 	
 	return (0);
