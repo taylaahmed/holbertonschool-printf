@@ -15,7 +15,7 @@ int print_char(va_list args)
 
 	c = va_arg(args, int);
 	putchar(c);
-	return (0);
+	return (1);
 }
 
 /**
@@ -48,7 +48,7 @@ int print_string(va_list args)
 		putchar(s[i]);
 		i++;
 	}
-	return (i - 1);
+	return (i);
 }
 
 /**
@@ -94,7 +94,7 @@ int print_int_dec(va_list args)
 	print_numbers(i);
 
 	/* bc it is still counting the */
-	return (count - 1);
+	return (count);
 
 }
 
