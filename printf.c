@@ -98,7 +98,7 @@ int _printf(const char *format, ...)
 		count++;
 		i++;
 	}
-	printf("%d\n", count);
+
 	va_end(args);
 	return (count);
 }
